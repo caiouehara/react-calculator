@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addLiveNumber } from '../../actions';
+import { addNumberDisplay } from '../../actions';
 class NumbersKeyboard extends React.Component {
 
     handleClick = event => {
-        this.props.addLiveNumber(event.target.id);
+        this.props.addNumberDisplay(event.target.id);
     }
     
     render(){
@@ -29,4 +29,4 @@ const mapStateToProps = state =>{
     return {state: state.numberDisplay};
 }
 
-export default connect(mapStateToProps, {  addLiveNumber  })(NumbersKeyboard);
+export default connect(mapStateToProps, {  addNumberDisplay  })(NumbersKeyboard);

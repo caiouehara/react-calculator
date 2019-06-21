@@ -1,22 +1,27 @@
 // Reducers
 import { combineReducers } from 'redux';
 
-const numberDisplay = (number = '', action ) => {
-    if (action.type === 'ADD_LIVE_NUMBER'){
-        return [number + action.payload];
+const numberDisplay = (numberDisplay = '', action ) => {
+    if (action.type === 'ADD_NUMBER_DISPLAY'){
+        return [numberDisplay + action.payload];
     }
-    return number;
+    // reseting numberDisplay
+    else if(action.type === 'RESET_NUMBER_DISPLAY'){
+        // set default
+        return numberDisplay = '';
+    }
+    return numberDisplay;
 }
 
-const liveNumber = (number = '', action ) => {
-    if (action.type === 'ADD_LIVE_NUMBER'){
-        return [...number, action.payload];
+const blockNumber = (blockNumber = [], action ) => {
+    if (action.type === 'ADD_BLOCK_NUMBER'){
+        return [...blockNumber, action.payload];
     }
-    return number;
+    return blockNumber;
 }
 
 export default combineReducers({
-    liveNumber: liveNumber,
     numberDisplay: numberDisplay,
+    blockNumber: blockNumber,
 });
 
