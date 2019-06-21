@@ -5,7 +5,7 @@ import { addBlockNumber, resetNumberDisplay } from '../../../actions';
 class Sum extends React.Component {
 
     handleClick = () => {
-        this.props.addBlockNumber(this.props.state.numberDisplay);
+        this.props.addBlockNumber(this.props.state.numberDisplay[0], 'SUM');
         this.props.resetNumberDisplay();
         // is displaying 1 array late 
         console.log(this.props.state);

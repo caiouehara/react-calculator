@@ -15,7 +15,7 @@ const numberDisplay = (numberDisplay = '', action ) => {
 
 const blockNumber = (blockNumber = [], action ) => {
     if (action.type === 'ADD_BLOCK_NUMBER'){
-        return [...blockNumber, action.payload];
+        return [...blockNumber, [action.payload.blockNumber, action.payload.operationMethod] ];
     }
     return blockNumber;
 }

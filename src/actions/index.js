@@ -12,9 +12,9 @@ export const resetNumberDisplay = () =>{
     };
 }
 
-export const addBlockNumber = blockNumber =>{
+export const addBlockNumber = (blockNumber, operationMethod) =>{
     return{
         type: 'ADD_BLOCK_NUMBER',
-        payload: blockNumber
+        payload: { blockNumber , operationMethod }
     };
 }
