@@ -1,13 +1,20 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-class NumberScreen extends Component{
-  render(){
+class NumberScreen extends Component {
+  render() {
     return (
       <div className="NumberScreen">
-        <h1>Is working</h1>
+        <h1>is Working</h1>
+        <p>{this.props.state}</p>
       </div>
     )
   };
 }
 
-export default NumberScreen;
+const mapStateToProps = state => {
+  return { state: state.numberDisplay };
+}
+
+export default connect(mapStateToProps)(NumberScreen);
+
