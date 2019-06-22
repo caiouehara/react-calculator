@@ -7,7 +7,7 @@ class Sum extends React.Component {
     handleClick = () => {
         this.props.addBlockNumber(this.props.state.numberDisplay[0], 'SUM');
         this.props.resetNumberDisplay();
-        // is displaying 1 array late 
+        // is showing 1 action late
         console.log(this.props.state);
     };
 

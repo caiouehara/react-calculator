@@ -13,10 +13,17 @@ const numberDisplay = (numberDisplay = '', action ) => {
     return numberDisplay;
 }
 
-const blockNumber = (blockNumber = [], action ) => {
+const blockNumber = (blockNumber = 0, action ) => {
     if (action.type === 'ADD_BLOCK_NUMBER'){
-        return [...blockNumber, [action.payload.blockNumber, action.payload.operationMethod] ];
+
+        // Creating Expression 
+        if(action.payload.operationMethod === 'SUM'){
+            return  blockNumber + action.payload.intNumber
+        }
+
     }
+
+    // Reseting Block Number 
     else if(action.type === 'RESET_BLOCK_NUMBER'){
         return blockNumber = [];
     }

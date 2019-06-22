@@ -13,9 +13,19 @@ export const resetNumberDisplay = () =>{
 }
 
 export const addBlockNumber = (blockNumber, operationMethod) =>{
+    // blockNumber is a String
+    // prevent operation with nothing (NaN)
+    let intNumber = 0;
+    if(typeof(blockNumber) === 'string'){
+        intNumber = parseInt(blockNumber);
+    }
+    else {
+        intNumber = 0;
+    }
+
     return{
         type: 'ADD_BLOCK_NUMBER',
-        payload: { blockNumber , operationMethod }
+        payload: { intNumber , operationMethod }
     };
 }
 
