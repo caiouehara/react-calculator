@@ -15,9 +15,7 @@ class Equal extends React.Component {
         // Order in Math Expressions
         // Sum
         let result = 0;
-        for(let i = boxSum.length; i > 0; i --){
-            result = boxSum[0] + boxSum[i];
-        }
+        result = boxSum.reduce(function(accumulator, currentValue){return accumulator += currentValue});
 
         console.log(result);
 
