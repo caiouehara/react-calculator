@@ -17,6 +17,9 @@ const blockNumber = (blockNumber = [], action ) => {
     if (action.type === 'ADD_BLOCK_NUMBER'){
         return [...blockNumber, [action.payload.blockNumber, action.payload.operationMethod] ];
     }
+    else if(action.type === 'RESET_BLOCK_NUMBER'){
+        return blockNumber = [];
+    }
     return blockNumber;
 }
 

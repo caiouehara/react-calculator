@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { resetNumberDisplay } from '../../../actions';
+import { resetNumberDisplay, resetBlockNumber } from '../../../actions';
 
 class Equal extends React.Component {
 
@@ -18,10 +18,11 @@ class Equal extends React.Component {
         for(let i = boxSum.length; i > 0; i --){
             result = boxSum[0] + boxSum[i];
         }
-        
+
         console.log(result);
 
         // reset
+        this.props.resetBlockNumber();
         this.props.resetNumberDisplay();
         result = 0;
         boxSum = [];
@@ -40,5 +41,5 @@ const mapStateToProps = state => {
     return { state };
 }
 
-export default connect(mapStateToProps, { resetNumberDisplay })(Equal);
+export default connect(mapStateToProps, { resetNumberDisplay, resetBlockNumber })(Equal);
 

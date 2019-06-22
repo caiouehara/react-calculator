@@ -18,3 +18,9 @@ export const addBlockNumber = (blockNumber, operationMethod) =>{
         payload: { blockNumber , operationMethod }
     };
 }
+
+export const resetBlockNumber = () =>{
+    return{
+        type: 'RESET_BLOCK_NUMBER',
+    };
+}
