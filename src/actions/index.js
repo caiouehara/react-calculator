@@ -1,4 +1,6 @@
 // Action Creators
+
+// Display Control
 export const addNumberDisplay = number =>{
     return{
         type: 'ADD_NUMBER_DISPLAY',
@@ -12,17 +14,19 @@ export const resetNumberDisplay = () =>{
     };
 }
 
-export const addBlockNumber = (blockNumber, operationMethod) =>{
-    // blockNumber is a String
-    // prevent operation with nothing (NaN)
-    let intNumber = 0;
-    if(typeof(blockNumber) === 'string'){
-        intNumber = parseInt(blockNumber);
-    }
-    else {
-        intNumber = 0;
-    }
+// Log
+export const displayHistory = () =>{
+    return{
+        type: 'DISPLAY_HISTORY',
+    };
+}
 
+// Block Number Control
+export const addBlockNumber = (blockNumber, operationMethod) =>{
+    let intNumber = 0;
+    // prevent operation with nothing (NaN)
+    isNaN(blockNumber) ? intNumber = 0 : intNumber = blockNumber;
+    
     return{
         type: 'ADD_BLOCK_NUMBER',
         payload: { intNumber , operationMethod }
