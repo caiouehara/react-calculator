@@ -4,10 +4,13 @@ import { resetNumberDisplay, resetBlockNumber } from '../../../actions';
 
 class Equal extends React.Component {
 
+    componentDidUpdate(){
+        console.log(this.props.state)
+    }
+
     handleClick = () => {
-        console.log(this.props.state);
-        this.props.state.resetBlockNumber();
-        this.props.state.resetNumberDisplay();
+        this.props.resetBlockNumber();
+        this.props.resetNumberDisplay();
     }
 
     render() {

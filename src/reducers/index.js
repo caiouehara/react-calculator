@@ -3,7 +3,7 @@ import { combineReducers } from 'redux';
 
 const numberDisplay = (numberDisplay = '', action ) => {
     if (action.type === 'ADD_NUMBER_DISPLAY'){
-        return [numberDisplay + action.payload];
+        return numberDisplay + action.payload;
     }
     // reseting numberDisplay
     else if(action.type === 'RESET_NUMBER_DISPLAY'){
@@ -25,7 +25,7 @@ const blockNumber = (blockNumber = 0, action ) => {
 
     // Reseting Block Number 
     else if(action.type === 'RESET_BLOCK_NUMBER'){
-        return blockNumber = [];
+        return blockNumber = 0;
     }
     return blockNumber;
 }
