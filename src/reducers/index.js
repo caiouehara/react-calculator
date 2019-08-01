@@ -5,17 +5,9 @@ import { combineReducers } from 'redux';
 // Log of Operations
 let operationsHistory = [];
 
-const blockNumber = (blockNumber = 0, action ) => {
+const blockNumber = (blockNumber = [], action ) => {
     if (action.type === 'ADD_BLOCK_NUMBER'){
-
-        // Create Log
-        operationsHistory.push(action.payload);
-
-        // Creating Expression 
-        if(action.payload.operationMethod === 'SUM'){
-            return  blockNumber + action.payload.intNumber
-        }
-
+            return blockNumber += action.payload;
     }
 
     // Reseting Block Number 

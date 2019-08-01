@@ -4,7 +4,7 @@ import { addBlockNumber } from '../../actions';
 class NumbersKeyboard extends React.Component {
 
     handleClick = event => {
-
+        this.props.addBlockNumber(event.target.id);
     }
     
     render(){

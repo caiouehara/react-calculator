@@ -8,14 +8,10 @@ export const displayHistory = () =>{
 }
 
 // Block Number Control
-export const addBlockNumber = (blockNumber, operationMethod) =>{
-    let intNumber = 0;
-    // prevent operation with nothing (NaN)
-    isNaN(blockNumber) ? intNumber = 0 : intNumber = blockNumber;
-    
+export const addBlockNumber = (blockNumber) =>{
     return{
         type: 'ADD_BLOCK_NUMBER',
-        payload: { intNumber , operationMethod }
+        payload: blockNumber
     };
 }
 
