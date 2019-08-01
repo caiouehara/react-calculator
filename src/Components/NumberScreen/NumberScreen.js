@@ -7,7 +7,7 @@ class NumberScreen extends Component {
     return (
       <div className="NumberScreen">
         <h1>is Working</h1>
-        <p>{}</p>
+        <p>{this.props.state}</p>
         <button onClick={this.props.displayHistory}>Log</button>
       </div>
     )
@@ -15,7 +15,7 @@ class NumberScreen extends Component {
 }
 
 const mapStateToProps = state => {
-  return { state: state.numberDisplay };
+  return { state: state.blockNumber };
 }
 
 export default connect(mapStateToProps, { displayHistory })(NumberScreen);
