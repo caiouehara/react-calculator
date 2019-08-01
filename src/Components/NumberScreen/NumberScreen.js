@@ -7,7 +7,7 @@ class NumberScreen extends Component {
     return (
       <div className="NumberScreen">
         <h1>is Working</h1>
-        <p>{this.props.state}</p>
+        <p>{}</p>
         <button onClick={this.props.displayHistory}>Log</button>
       </div>
     )

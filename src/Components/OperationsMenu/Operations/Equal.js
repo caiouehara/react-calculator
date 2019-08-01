@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { resetNumberDisplay, resetBlockNumber } from '../../../actions';
+import { resetBlockNumber } from '../../../actions';
 
 class Equal extends React.Component {
 
@@ -10,7 +10,6 @@ class Equal extends React.Component {
 
     handleClick = () => {
         this.props.resetBlockNumber();
-        this.props.resetNumberDisplay();
     }
 
     render() {
@@ -26,5 +25,5 @@ const mapStateToProps = state => {
     return { state };
 }
 
-export default connect(mapStateToProps, { resetNumberDisplay, resetBlockNumber })(Equal);
+export default connect(mapStateToProps, { resetBlockNumber })(Equal);
 

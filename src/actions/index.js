@@ -1,19 +1,5 @@
 // Action Creators
 
-// Display Control
-export const addNumberDisplay = number =>{
-    return{
-        type: 'ADD_NUMBER_DISPLAY',
-        payload: number
-    };
-}
-
-export const resetNumberDisplay = () =>{
-    return{
-        type: 'RESET_NUMBER_DISPLAY',
-    };
-}
-
 // Log
 export const displayHistory = () =>{
     return{
