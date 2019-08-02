@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addBlockNumber } from '../../../actions';
+import { operation } from '../../../actions';
 
 class Sum extends React.Component {
 
     handleClick = () => {
-        // this.props.addBlockNumber(parseInt(this.props.state.numberDisplay), 'SUM');
+        this.props.operation('SUM');
     };
 
     render() {
@@ -21,5 +21,5 @@ const mapStateToProps = state => {
     return { state };
 }
 
-export default connect(mapStateToProps, { addBlockNumber })(Sum);
+export default connect(mapStateToProps, { operation })(Sum);
 

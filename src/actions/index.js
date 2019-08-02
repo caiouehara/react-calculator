@@ -8,15 +8,23 @@ export const displayHistory = () =>{
 }
 
 // Block Number Control
-export const addBlockNumber = (blockNumber) =>{
+export const addScreenNumber = (blockNumber) =>{
     return{
-        type: 'ADD_BLOCK_NUMBER',
+        type: 'ADD_SCREEN_NUMBER',
         payload: blockNumber
     };
 }
 
-export const resetBlockNumber = () =>{
+export const resetNumbersThread = () =>{
     return{
-        type: 'RESET_BLOCK_NUMBER',
+        type: 'RESET_NUMBERS_THREAD',
+    };
+}
+
+// Operation Control
+export const operation = (operation) =>{
+    return{
+        type: 'OPERATION_METHOD',
+        payload: operation
     };
 }

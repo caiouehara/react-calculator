@@ -15,7 +15,7 @@ class NumberScreen extends Component {
 }
 
 const mapStateToProps = state => {
-  return { state: state.blockNumber };
+  return { state: state.numbersThread };
 }
 
 export default connect(mapStateToProps, { displayHistory })(NumberScreen);

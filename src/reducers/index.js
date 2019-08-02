@@ -1,23 +1,33 @@
 // Reducers
 import { combineReducers } from 'redux';
 
-
 // Log of Operations
 let operationsHistory = [];
 
-const blockNumber = (blockNumber = [], action ) => {
-    if (action.type === 'ADD_BLOCK_NUMBER'){
-            return blockNumber += action.payload;
+// data for Numbers and operations
+let operationsToDo = [];
+
+const numbersThread = (screenNumber = [""], action) => {
+
+    // Creating New Numbers on Screen 
+    if (action.type === 'ADD_SCREEN_NUMBER') {
+        return screenNumber += action.payload;
     }
 
-    // Reseting Block Number 
-    else if(action.type === 'RESET_BLOCK_NUMBER'){
-        return blockNumber = 0;
+    if (action.type === 'OPERATION_METHOD') {
+        operationsToDo.push(parseInt(screenNumber), action.payload);
+        console.log(operationsToDo);
+        return screenNumber = "";
     }
-    return blockNumber;
+
+    // Reseting Numbers
+    else if (action.type === 'RESET_NUMBERS_THREAD') {
+        return screenNumber = [];
+    }
+
+    return screenNumber;
 }
 
 export default combineReducers({
-    blockNumber: blockNumber,
+    numbersThread: numbersThread,
 });
-

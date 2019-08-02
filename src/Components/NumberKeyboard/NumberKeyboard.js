@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addBlockNumber } from '../../actions';
+import { addScreenNumber } from '../../actions';
 class NumbersKeyboard extends React.Component {
 
     handleClick = event => {
-        this.props.addBlockNumber(event.target.id);
+        this.props.addScreenNumber(event.target.id);
     }
     
     render(){
@@ -29,4 +29,4 @@ const mapStateToProps = state =>{
     return {state} ;
 }
 
-export default connect(mapStateToProps, { addBlockNumber })(NumbersKeyboard);
+export default connect(mapStateToProps, { addScreenNumber })(NumbersKeyboard);
