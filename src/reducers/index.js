@@ -4,41 +4,68 @@ import { combineReducers } from 'redux';
 // Log of Operations
 let operationsHistory = [];
 
-// data for Numbers and operations
-let operationsToDo = [];
 let results = [];
-// Do Operation
-function operationsThread(operationsToDo){
-    // Single Operation
-    if(operationsToDo.length === 4){
-        operationsToDo.reduce((accumulator, actualValue, index, array) => {
-            if(actualValue === "SUM"){
-                results.push(accumulator + array[index+1]);
+
+let operationsThread = {
+    // Control Conditionals for Operation
+    controlWire: {
+        firstOperationDone: false,
+    },
+    // data for Numbers and operations
+    operationsToDo: [],
+
+    operationsDo() {
+        // Sum Results
+        if (this.controlWire.firstOperationDone) {
+            results.reduce((accumulator, currentValue) => {
+                return accumulator + currentValue;
+            });
+        }
+
+        // Single Operation
+        if (this.operationsToDo.length === 4) {
+            this.operationsToDo.reduce((accumulator, actualValue, index, array) => {
+                if (actualValue === "SUM") {
+                    results.push(accumulator + array[index + 1]);
+                    this.controlWire.firstOperationDone = true;
+                    this.operationsFinish();
+                }
+
+            });
+        }
+
+    },
+
+    operationsFinish() {
+        this.operationsToDo = [];
+
+        // delete NAN showing in results
+        results.map(function (currentValue, index, array) {
+            if (isNaN(currentValue)) {
+                array.splice(index, 1);
             }
         });
-    }
+    },
 }
+
 
 const numbersThread = (screenNumber = [""], action) => {
 
     // Creating New Numbers on Screen 
     if (action.type === 'ADD_SCREEN_NUMBER') {
+        if (operationsThread.controlWire.firstOperationDone) {
+            return screenNumber = results[0];
+        }
         return screenNumber += action.payload;
     }
 
     if (action.type === 'OPERATION_METHOD') {
-        operationsToDo.push(parseInt(screenNumber), action.payload);
-        console.log(operationsToDo)
-        operationsThread(operationsToDo);
-
+        operationsThread.operationsToDo.push(parseInt(screenNumber), action.payload);
+        operationsThread.operationsDo();
         // reseting operation ( have to fix this shit )
-        if(operationsToDo.length === 4){
-            operationsToDo = [];
-            // Bugging Undefined (NAN), 4 in reduce couting, count a null.
-            results.splice(-1,1);
-            console.log(results);
-        }
 
+
+        // reset screen after operation
         return screenNumber = "";
     }
 
@@ -47,6 +74,7 @@ const numbersThread = (screenNumber = [""], action) => {
         return screenNumber = [""];
     }
 
+    // redux ask a return
     return screenNumber;
 }
 
