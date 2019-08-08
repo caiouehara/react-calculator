@@ -38,13 +38,7 @@ let operationsThread = {
 
     operationsFinish() {
         this.operationsToDo = [];
-
-        // delete NAN showing in results
-        results.map(function (currentValue, index, array) {
-            if (isNaN(currentValue)) {
-                array.splice(index, 1);
-            }
-        });
+        results.filter(()=> {return NaN});
     },
 }
 
