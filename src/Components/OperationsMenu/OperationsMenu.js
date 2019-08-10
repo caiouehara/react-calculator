@@ -13,11 +13,9 @@ class OperationsMenu extends React.Component {
 
     if (operationsThread.operationsToDo.length === 4) {
       operationsThread.operationsDo();
-      console.log(operationsThread.results);
+      this.props.addScreenNumber(operationsThread.operationsFinish());
     }
-    console.log(operationsThread.operationsToDo)
-
-  }
+  } 
 
   render() {
     return (
