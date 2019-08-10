@@ -20,11 +20,3 @@ export const resetNumbersThread = () =>{
         type: 'RESET_NUMBERS_THREAD',
     };
 }
-
-// Operation Control
-export const operation = (operation) =>{
-    return{
-        type: 'OPERATION_METHOD',
-        payload: operation
-    };
-}
