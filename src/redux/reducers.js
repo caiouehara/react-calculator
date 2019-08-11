@@ -8,7 +8,7 @@ const calculationReducer = ( calculate = [], action) => {
         calculateThread.update(action.payload);
     }
     if(action.type === "ADD_OPERATION"){
-
+        calculateThread.calculate(action.payload);
     }
     return calculate;
 }
