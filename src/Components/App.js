@@ -1,7 +1,7 @@
 import React from 'react';
-import NumberScreen from './NumberScreen/NumberScreen.js';
-import NumbersKeyboard from './NumberKeyboard/NumberKeyboard.js';
-import OperationsMenu from './OperationsMenu/OperationsMenu.js';
+import NumberScreen from './NumberScreen.js';
+import NumbersKeyboard from './NumberKeyboard.js';
+import OperationsMenu from './OperationsMenu.js';
 
 class App extends React.Component {
   render(){

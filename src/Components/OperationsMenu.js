@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import operationsThread from './operationsThread';
-import { addScreenNumber, resetNumbersThread } from '../../actions';
+import operationsThread from '../operationsThread';
+
 class OperationsMenu extends React.Component {
   componentDidUpdate() {
     console.log(this.props.state)
@@ -36,4 +36,4 @@ const mapStateToProps = state => {
   return { state };
 }
 
-export default connect(mapStateToProps, { addScreenNumber, resetNumbersThread })(OperationsMenu);
+export default connect(mapStateToProps, {  })(OperationsMenu);
