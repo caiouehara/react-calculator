@@ -1,4 +1,4 @@
-let operationsThread = {
+let calculationThread = {
     // Control Conditionals for Operation
     controlWire: {
         
@@ -28,4 +28,4 @@ let operationsThread = {
     },
 }
 
-export default operationsThread;
+export default calculationThread;

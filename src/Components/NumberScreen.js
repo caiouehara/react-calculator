@@ -6,14 +6,14 @@ class NumberScreen extends Component {
     return (
       <div className="NumberScreen">
         <h1>is Working</h1>
-        <p>{this.props.state}</p>
+        <p>{this.props.state.screenReducer}</p>
       </div>
     )
   };
 }
 
 const mapStateToProps = state => {
-  return { state: state.numbersThread };
+  return { state };
 }
 
 export default connect(mapStateToProps, {  })(NumberScreen);

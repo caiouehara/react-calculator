@@ -1,27 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import operationsThread from '../operationsThread';
-
 class OperationsMenu extends React.Component {
-  componentDidUpdate() {
-    console.log(this.props.state)
-  }
-
-  handleOperation = (operationType) => {
-    operationsThread.operationsToDo.push(this.props.state.numbersThread, operationType );
-    this.props.resetNumbersThread();
-
-    if (operationsThread.operationsToDo.length === 4) {
-      operationsThread.operationsDo();
-      this.props.addScreenNumber(operationsThread.operationsFinish());
-    }
-  } 
-
   render() {
     return (
       <div className="OperationsMenu">
         <div className="Sum">
-          <button onClick={() => this.handleOperation("SUM")}> SUM </button>
+          <button onClick={console.log(this.props.state)}> SUM </button>
         </div>
 
         <div className="Equal">

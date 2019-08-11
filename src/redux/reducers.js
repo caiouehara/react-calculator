@@ -1,15 +1,23 @@
 // Reducers
 import { combineReducers } from 'redux';
+import screenThread from '../Threads/screenThread';
 
-const calculationThread = ( inputCalculate = [""], action) => {
-
+const calculationReducer = ( calculate = [], action) => {
+    if(action.type === "ADD_NUMBER"){
+        calculate.push(parseInt(action.payload));
+    }
+    return calculate;
 }
 
-const screenThread = ( inputScreen = [""], action) => {
-
+const screenReducer = ( screen = "", action) => {
+    if(action.type === "ADD_NUMBER"){
+        screenThread.update(action.payload);
+        screen = screenThread.screen;
+    }
+    return screen;
 }
 
 export default combineReducers({
-    calculationThread: calculationThread,
-    screenThread: screenThread,
+    calculationReducer: calculationReducer,
+    screenReducer: screenReducer,
 });

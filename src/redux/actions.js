@@ -2,7 +2,7 @@
 
 export const addNumber = (number) =>{
     return {
-        type: 'ADD_SCREEN_NUMBER',
+        type: 'ADD_NUMBER',
         payload: number
     };
 }
