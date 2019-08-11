@@ -6,3 +6,10 @@ export const addNumber = (number) =>{
         payload: number
     };
 }
+
+export const addOperation = (operation) =>{
+    return {
+        type: 'ADD_OPERATION',
+        payload: operation
+    };
+}

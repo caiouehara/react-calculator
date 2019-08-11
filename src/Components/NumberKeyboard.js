@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addNumber } from '../redux/actions';
 class NumbersKeyboard extends React.Component {
-
     handleClick = event => {
         this.props.addNumber(event.target.id);
         console.log(this.props.state)

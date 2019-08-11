@@ -1,16 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { addOperation } from '../redux/actions';
 class OperationsMenu extends React.Component {
+
+  handleClick = event => {
+    this.props.addOperation(event.target.id)
+  }
+
   render() {
     return (
       <div className="OperationsMenu">
-        <div className="Sum">
-          <button onClick={console.log(this.props.state)}> SUM </button>
-        </div>
-
-        <div className="Equal">
-          <button onClick={() => this.handleOperation("EQUAL")}> EQUAL </button>
-        </div>
+        <button onClick={this.handleClick} id="+"> SUM </button>
       </div>
     )
   };
@@ -20,4 +20,4 @@ const mapStateToProps = state => {
   return { state };
 }
 
-export default connect(mapStateToProps, {  })(OperationsMenu);
+export default connect(mapStateToProps, { addOperation })(OperationsMenu);
