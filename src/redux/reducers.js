@@ -1,10 +1,11 @@
 // Reducers
 import { combineReducers } from 'redux';
 import screenThread from '../Threads/screenThread';
+import calculateThread from '../Threads/calculationThread';
 
 const calculationReducer = ( calculate = [], action) => {
     if(action.type === "ADD_NUMBER"){
-        calculate.push(parseInt(action.payload));
+        calculateThread.update(action.payload);
     }
     return calculate;
 }
