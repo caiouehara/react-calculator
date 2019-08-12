@@ -3,14 +3,15 @@ import { combineReducers } from 'redux';
 import screenThread from '../Threads/screenThread';
 import calculateThread from '../Threads/calculationThread';
 
-const calculationReducer = ( calculate = [], action) => {
+const calculationReducer = ( screenResult = "", action) => {
     if(action.type === "ADD_NUMBER"){
         calculateThread.update(action.payload);
     }
     if(action.type === "ADD_OPERATION"){
         calculateThread.calculate(action.payload);
+        screenResult = String(calculateThread.result);
     }
-    return calculate;
+    return screenResult;
 }
 
 const screenReducer = ( screen = "", action) => {

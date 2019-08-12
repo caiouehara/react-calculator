@@ -7,6 +7,7 @@ class NumberScreen extends Component {
       <div className="NumberScreen">
         <h1>is Working</h1>
         <p>{this.props.state.screenReducer}</p>
+        <p>{this.props.state.calculationReducer}</p>
       </div>
     )
   };
