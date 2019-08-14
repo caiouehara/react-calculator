@@ -11,6 +11,8 @@ class OperationsMenu extends React.Component {
     return (
       <div className="OperationsMenu">
         <button onClick={this.handleClick} id="+"> SUM </button>
+        <button onClick={this.handleClick} id="-"> SUBTRACT </button>
+        <button onClick={this.handleClick} id="*"> MULT </button>
       </div>
     )
   };
